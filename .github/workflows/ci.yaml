@@ -35,13 +35,13 @@ env:
   WAYFINDER_TOKEN: ${{ secrets.WAYFINDER_TOKEN }}
   WAYFINDER_SERVER: ${{ vars.WAYFINDER_SERVER }}
   WAYFINDER_WORKSPACE: ${{ vars.WAYFINDER_WORKSPACE || 'to1' }}
-  APPLICATION_NAME: ${{ inputs.app-name || 'app-name-placeholder' }}
+  APPLICATION_NAME: ${{ inputs.app-name || 'nf-app1' }}
   APP_ENVIRONMENT_NAME: ${{ inputs.app-environment-name || 'dev' }}
   APPLICATION_DIRECTORY: ${{ inputs.app-directory || 'infra' }}
   APPLICATION_FILENAME: ${{ inputs.app-filename || 'application.yaml' }}
   APP_ENVIRONMENT_FILENAME: ${{ inputs.app-env-filename || 'appenv.yaml' }}
   KUSTOMIZATION_DIRECTORY: ${{ inputs.k8-directory || 'infra/kustomization' }}
-  APP_COMPONENT_TO_DEPLOY: ${{ inputs.app-component-to-deploy || 'component-name-placeholder' }}
+  APP_COMPONENT_TO_DEPLOY: ${{ inputs.app-component-to-deploy || 'ui' }}
 
 jobs:
   build_docker:
@@ -156,7 +156,7 @@ jobs:
   #       APPLICATION_FILENAME: ${{ inputs.app-filename || 'application.yaml' }}
   #       APP_ENVIRONMENT_FILENAME: ${{ inputs.app-env-filename || 'appenv.yaml' }}
   #       KUSTOMIZATION_DIRECTORY: ${{ inputs.k8-directory || 'infra/kustomization' }}
-  #       APP_COMPONENT_TO_DEPLOY: ${{ inputs.app-component-to-deploy || 'component-name-placeholder' }}
+  #       APP_COMPONENT_TO_DEPLOY: ${{ inputs.app-component-to-deploy || 'ui' }}
   #     image: quay.io/appvia-wayfinder/wftoolbox:v2.1.2
   #   steps:
   #     - name: Checkout
